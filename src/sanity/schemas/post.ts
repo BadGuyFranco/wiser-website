@@ -98,10 +98,6 @@ export default defineType({
             hotspot: true,
           },
         },
-        {
-          type: "code",
-          title: "Code Block",
-        },
       ],
     }),
   ],
