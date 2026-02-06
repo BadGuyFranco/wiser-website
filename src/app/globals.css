@@ -1,21 +1,45 @@
 @import "tailwindcss";
 
 :root {
+  /* WISER Brand Colors */
   --background: #ffffff;
+  --background-alt: #f9f9f4;
   --foreground: #171717;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #64748b;
-  --accent: #f59e0b;
+  --foreground-muted: #999999;
+  
+  /* Primary: WISER Teal/Green */
+  --primary: #15665c;
+  --primary-light: #1a7d71;
+  --primary-dark: #0f4d45;
+  
+  /* Accent: Orange */
+  --accent: #f58229;
+  --accent-light: #f79548;
+  --accent-dark: #d96d1a;
+  
+  /* Neutral grays */
+  --gray-100: #f9f9f4;
+  --gray-200: #e5e5e0;
+  --gray-300: #d4d4cf;
+  --gray-400: #a3a3a0;
+  --gray-500: #999999;
+  --gray-600: #737373;
+  --gray-700: #525252;
+  --gray-800: #262626;
+  --gray-900: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
   --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
   --font-sans: var(--font-inter);
 }
 
@@ -37,6 +61,47 @@ body {
   padding: 0 1.5rem;
 }
 
+/* Button styles */
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+}
+
+.btn-secondary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
 /* Prose styling for blog posts */
 .prose {
   max-width: 65ch;
@@ -47,6 +112,7 @@ body {
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: var(--foreground);
 }
 
 .prose h2 {
@@ -54,6 +120,7 @@ body {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  color: var(--foreground);
 }
 
 .prose h3 {
@@ -61,11 +128,13 @@ body {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  color: var(--foreground);
 }
 
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.75;
+  color: var(--gray-700);
 }
 
 .prose ul, .prose ol {
@@ -75,6 +144,7 @@ body {
 
 .prose li {
   margin-bottom: 0.5rem;
+  color: var(--gray-700);
 }
 
 .prose a {
@@ -91,19 +161,19 @@ body {
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: var(--secondary);
+  color: var(--gray-600);
 }
 
 .prose code {
-  background: #f1f5f9;
+  background: var(--gray-100);
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
 }
 
 .prose pre {
-  background: #1e293b;
-  color: #e2e8f0;
+  background: var(--gray-800);
+  color: var(--gray-200);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
@@ -113,4 +183,22 @@ body {
 .prose pre code {
   background: transparent;
   padding: 0;
+}
+
+/* Section backgrounds */
+.bg-alt {
+  background-color: var(--background-alt);
+}
+
+/* Text colors */
+.text-muted {
+  color: var(--foreground-muted);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
 }

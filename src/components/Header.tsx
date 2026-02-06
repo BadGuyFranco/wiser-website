@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="bg-white border-b border-gray-100">
       <nav className="container-wide flex items-center justify-between py-4">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold text-primary">
           WISER Method
         </Link>
 
@@ -25,14 +25,14 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-secondary hover:text-foreground transition-colors"
+              className="text-foreground-muted hover:text-foreground transition-colors"
             >
               {item.name}
             </Link>
           ))}
           <Link
             href="/waitlist"
-            className="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors"
+            className="bg-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-accent-dark transition-colors"
           >
             Join Waitlist
           </Link>
@@ -77,7 +77,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-secondary hover:text-foreground transition-colors"
+                className="text-foreground-muted hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -85,7 +85,7 @@ export function Header() {
             ))}
             <Link
               href="/waitlist"
-              className="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors text-center"
+              className="bg-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-accent-dark transition-colors text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Join Waitlist
