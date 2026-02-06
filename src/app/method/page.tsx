@@ -2,30 +2,30 @@ import Link from "next/link";
 
 export default function MethodPage() {
   return (
-    <div className="py-12 md:py-16">
+    <div className="py-16 md:py-24">
       {/* Header */}
-      <header className="container-narrow mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">The WISER Method</h1>
-        <p className="text-xl text-primary font-medium mb-6">
+      <header className="container-narrow mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">The WISER Method</h1>
+        <p className="text-xl text-accent font-medium mb-8">
           Mastering perpetual innovation using{" "}
           <a
             href="https://aifirstprinciples.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-primary-dark"
+            className="underline hover:text-accent-light"
           >
             AI First Principles
           </a>
         </p>
         
         {/* Quick Navigation */}
-        <div className="flex flex-wrap gap-3 text-sm">
+        <div className="flex flex-wrap gap-4 text-sm">
           <span className="text-foreground-muted">Jump to:</span>
-          <a href="#witness" className="text-primary hover:text-primary-dark">Witness</a>
-          <a href="#interrogate" className="text-primary hover:text-primary-dark">Interrogate</a>
-          <a href="#solve" className="text-primary hover:text-primary-dark">Solve</a>
-          <a href="#expand" className="text-primary hover:text-primary-dark">Expand</a>
-          <a href="#refine" className="text-primary hover:text-primary-dark">Refine</a>
+          <a href="#witness" className="text-accent hover:text-accent-light">Witness</a>
+          <a href="#interrogate" className="text-accent hover:text-accent-light">Interrogate</a>
+          <a href="#solve" className="text-accent hover:text-accent-light">Solve</a>
+          <a href="#expand" className="text-accent hover:text-accent-light">Expand</a>
+          <a href="#refine" className="text-accent hover:text-accent-light">Refine</a>
         </div>
       </header>
 
@@ -104,8 +104,9 @@ export default function MethodPage() {
           </p>
 
           {/* Witness */}
-          <div id="witness" className="scroll-mt-24 mt-10 p-6 bg-background-alt rounded-xl">
-            <h3 className="text-primary">Witness</h3>
+          <div id="witness" className="scroll-mt-24 mt-10 p-8 bg-background-elevated border border-border rounded-xl">
+            <div className="text-4xl font-bold text-accent mb-4">W</div>
+            <h3 className="text-foreground text-xl font-semibold">Witness</h3>
             <p className="italic text-lg text-foreground-muted mb-4">
               Observation reveals what planning conceals.
             </p>
@@ -113,7 +114,7 @@ export default function MethodPage() {
               This phase begins here because documentation theater often hides the workarounds and hacks that keep systems running. Optimizing based on the official process often means optimizing fiction. Witness demands mapping the friction people actually feel, forcing the solution to address real problems rather than theoretical ones.
             </p>
             <blockquote>
-              <strong>AI First Principles Driving Witness:</strong>
+              <strong className="text-foreground">AI First Principles Driving Witness:</strong>
               <ul>
                 <li><strong>Build from User Experience:</strong> Design systems from lived experience, not distant observation.</li>
                 <li><strong>Reveal the Invisible:</strong> Pursue what is hard to explain to expose ignorance hiding in documentation.</li>
@@ -124,8 +125,9 @@ export default function MethodPage() {
           </div>
 
           {/* Interrogate */}
-          <div id="interrogate" className="scroll-mt-24 mt-10 p-6 bg-background-alt rounded-xl">
-            <h3 className="text-primary">Interrogate</h3>
+          <div id="interrogate" className="scroll-mt-24 mt-10 p-8 bg-background-elevated border border-border rounded-xl">
+            <div className="text-4xl font-bold text-accent mb-4">I</div>
+            <h3 className="text-foreground text-xl font-semibold">Interrogate</h3>
             <p className="italic text-lg text-foreground-muted mb-4">
               Observation finds pain. Experiments find causes.
             </p>
@@ -133,7 +135,7 @@ export default function MethodPage() {
               This phase exists to avoid the most common failure mode: building the wrong solution perfectly. Instead of committing to months of development, rapid experiments reveal root causes. The goal is not to guess what is broken, but to force the system to reveal it.
             </p>
             <blockquote>
-              <strong>AI First Principles Driving Interrogate:</strong>
+              <strong className="text-foreground">AI First Principles Driving Interrogate:</strong>
               <ul>
                 <li><strong>Iterate Towards What Works:</strong> Learn by doing, not planning. Test assumptions before committing to solutions.</li>
                 <li><strong>Reveal the Invisible:</strong> Expose hidden root causes that surface-level observation misses.</li>
@@ -146,8 +148,9 @@ export default function MethodPage() {
           </div>
 
           {/* Solve */}
-          <div id="solve" className="scroll-mt-24 mt-10 p-6 bg-background-alt rounded-xl">
-            <h3 className="text-primary">Solve</h3>
+          <div id="solve" className="scroll-mt-24 mt-10 p-8 bg-background-elevated border border-border rounded-xl">
+            <div className="text-4xl font-bold text-accent mb-4">S</div>
+            <h3 className="text-foreground text-xl font-semibold">Solve</h3>
             <p className="italic text-lg text-foreground-muted mb-4">
               Experiments find causes. Solutions earn trust.
             </p>
@@ -155,7 +158,7 @@ export default function MethodPage() {
               The focus is on delivering a single, working solution that demonstrates undeniable value. Working software settles arguments. This approach secures the organizational permission required to touch critical systems by delivering a win that matters.
             </p>
             <blockquote>
-              <strong>AI First Principles Driving Solve:</strong>
+              <strong className="text-foreground">AI First Principles Driving Solve:</strong>
               <ul>
                 <li><strong>Iterate Towards What Works:</strong> Validate what works gradually through tangible impact.</li>
                 <li><strong>Reveal the Invisible:</strong> Demonstrate value that was previously theoretical through working software.</li>
@@ -168,8 +171,9 @@ export default function MethodPage() {
           </div>
 
           {/* Expand */}
-          <div id="expand" className="scroll-mt-24 mt-10 p-6 bg-background-alt rounded-xl">
-            <h3 className="text-primary">Expand</h3>
+          <div id="expand" className="scroll-mt-24 mt-10 p-8 bg-background-elevated border border-border rounded-xl">
+            <div className="text-4xl font-bold text-accent mb-4">E</div>
+            <h3 className="text-foreground text-xl font-semibold">Expand</h3>
             <p className="italic text-lg text-foreground-muted mb-4">
               Earned trust enables systematic change toward autonomy.
             </p>
@@ -177,7 +181,7 @@ export default function MethodPage() {
               Modularizing the successful component allows it to solve related problems while maintaining explicit human oversight. This scales the solution&apos;s reach without introducing the systemic risk that comes from all-or-nothing deployments.
             </p>
             <blockquote>
-              <strong>AI First Principles Driving Expand:</strong>
+              <strong className="text-foreground">AI First Principles Driving Expand:</strong>
               <ul>
                 <li><strong>Decompose Incrementally:</strong> Dismantle legacy complexity piece-by-piece, allowing isolated components to decompose naturally.</li>
                 <li><strong>Reveal the Invisible:</strong> Identify invisible dependencies and downstream effects before they become systemic failures.</li>
@@ -191,8 +195,9 @@ export default function MethodPage() {
           </div>
 
           {/* Refine */}
-          <div id="refine" className="scroll-mt-24 mt-10 p-6 bg-background-alt rounded-xl">
-            <h3 className="text-primary">Refine</h3>
+          <div id="refine" className="scroll-mt-24 mt-10 p-8 bg-background-elevated border border-border rounded-xl">
+            <div className="text-4xl font-bold text-accent mb-4">R</div>
+            <h3 className="text-foreground text-xl font-semibold">Refine</h3>
             <p className="italic text-lg text-foreground-muted mb-4">
               Autonomy is not designed, it is grown.
             </p>
@@ -200,7 +205,7 @@ export default function MethodPage() {
               AI autonomy increases as reliability is proven. Trust is earned, not designed. Agency transfers to the system as it proves it can make the decision correctly without breaking the boundaries defined in your Playbook.
             </p>
             <blockquote>
-              <strong>AI First Principles Driving Refine:</strong>
+              <strong className="text-foreground">AI First Principles Driving Refine:</strong>
               <ul>
                 <li><strong>AI Inherits Messiness:</strong> Accept that AI is inconsistent and requires structure to operate effectively.</li>
                 <li><strong>Reveal the Invisible:</strong> Detect invisible drift and silent failures through rigorous feedback loops.</li>
@@ -270,14 +275,14 @@ export default function MethodPage() {
       </article>
 
       {/* Footer CTA */}
-      <section className="container-narrow mt-16 p-8 bg-primary rounded-xl text-center">
-        <h2 className="text-2xl font-bold text-white mb-4">Ready to Implement?</h2>
-        <p className="text-white/80 mb-6 max-w-xl mx-auto">
+      <section className="container-narrow mt-20 p-10 bg-background-elevated border border-border rounded-xl text-center">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Ready to Implement?</h2>
+        <p className="text-foreground-muted mb-8 max-w-xl mx-auto">
           The methodology is free. The WISER Certified Partner program gives you live training, cohort accountability, and professional certification.
         </p>
         <Link
           href="/waitlist"
-          className="inline-block bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-accent-dark transition-colors"
+          className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-light transition-all"
         >
           Join the Founding Cohort Waitlist
         </Link>

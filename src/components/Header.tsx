@@ -8,15 +8,16 @@ export function Header() {
 
   const navigation = [
     { name: "Method", href: "/method" },
+    { name: "Book", href: "/playbook" },
     { name: "Blog", href: "/blog" },
     { name: "Assessment", href: "/assessment" },
   ];
 
   return (
-    <header className="bg-white border-b border-gray-100">
+    <header className="bg-background border-b border-border">
       <nav className="container-wide flex items-center justify-between py-4">
-        <Link href="/" className="text-xl font-bold text-primary">
-          WISER Method
+        <Link href="/" className="text-xl font-bold text-foreground tracking-tight">
+          WISER<span className="text-accent">.</span>
         </Link>
 
         {/* Desktop navigation */}
@@ -25,14 +26,14 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-foreground-muted hover:text-foreground transition-colors"
+              className="text-foreground-muted hover:text-foreground transition-colors text-sm font-medium tracking-wide"
             >
               {item.name}
             </Link>
           ))}
           <Link
             href="/waitlist"
-            className="bg-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-accent-dark transition-colors"
+            className="bg-accent text-white px-5 py-2 rounded-lg font-semibold hover:bg-accent-light transition-all text-sm tracking-wide"
           >
             Join Waitlist
           </Link>
@@ -40,7 +41,7 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -71,13 +72,13 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 py-4">
+        <div className="md:hidden border-t border-border py-4 bg-background-alt">
           <div className="container-wide flex flex-col gap-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground-muted hover:text-foreground transition-colors"
+                className="text-foreground-muted hover:text-foreground transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -85,7 +86,7 @@ export function Header() {
             ))}
             <Link
               href="/waitlist"
-              className="bg-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-accent-dark transition-colors text-center"
+              className="bg-accent text-white px-5 py-3 rounded-lg font-semibold hover:bg-accent-light transition-all text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Join Waitlist

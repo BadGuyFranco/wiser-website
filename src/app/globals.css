@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* WISER Brand Colors */
-  --background: #ffffff;
-  --background-alt: #f9f9f4;
-  --foreground: #171717;
-  --foreground-muted: #999999;
+  /* WISER Brand Colors - Dark Theme */
+  --background: #000000;
+  --background-alt: #0a0a0a;
+  --background-elevated: #141414;
+  --foreground: #ffffff;
+  --foreground-muted: #a3a3a3;
+  --foreground-subtle: #737373;
   
   /* Primary: WISER Teal/Green */
   --primary: #15665c;
@@ -17,29 +19,37 @@
   --accent-light: #f79548;
   --accent-dark: #d96d1a;
   
-  /* Neutral grays */
-  --gray-100: #f9f9f4;
-  --gray-200: #e5e5e0;
-  --gray-300: #d4d4cf;
-  --gray-400: #a3a3a0;
-  --gray-500: #999999;
-  --gray-600: #737373;
-  --gray-700: #525252;
-  --gray-800: #262626;
-  --gray-900: #171717;
+  /* Neutral grays (dark theme adjusted) */
+  --gray-100: #1a1a1a;
+  --gray-200: #262626;
+  --gray-300: #333333;
+  --gray-400: #525252;
+  --gray-500: #737373;
+  --gray-600: #a3a3a3;
+  --gray-700: #d4d4d4;
+  --gray-800: #e5e5e5;
+  --gray-900: #f5f5f5;
+  
+  /* Border colors */
+  --border: #262626;
+  --border-light: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-background-alt: var(--background-alt);
+  --color-background-elevated: var(--background-elevated);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --color-accent-dark: var(--accent-dark);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
   --font-sans: var(--font-inter);
 }
 
@@ -67,12 +77,14 @@ body {
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  font-weight: 600;
+  transition: all 0.2s;
+  letter-spacing: 0.025em;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--accent-light);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -80,26 +92,96 @@ body {
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  font-weight: 600;
+  transition: all 0.2s;
+  letter-spacing: 0.025em;
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  border: 2px solid var(--foreground);
+  color: var(--foreground);
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.2s;
+  letter-spacing: 0.025em;
 }
 
 .btn-outline:hover {
-  background-color: var(--primary);
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.btn-outline-accent {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  letter-spacing: 0.025em;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent);
   color: white;
+}
+
+/* Large display numbers (like the design comp) */
+.display-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .display-number {
+    font-size: 5rem;
+  }
+}
+
+/* Card styles for dark theme */
+.card {
+  background-color: var(--background-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--border-light);
+}
+
+.card-highlight {
+  background-color: var(--background-elevated);
+  border: 2px solid var(--primary);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+/* Section dividers */
+.section-dark {
+  background-color: var(--background);
+}
+
+.section-elevated {
+  background-color: var(--background-alt);
+}
+
+/* Text utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Prose styling for blog posts */
@@ -134,7 +216,7 @@ body {
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.75;
-  color: var(--gray-700);
+  color: var(--foreground-muted);
 }
 
 .prose ul, .prose ol {
@@ -144,40 +226,43 @@ body {
 
 .prose li {
   margin-bottom: 0.5rem;
-  color: var(--gray-700);
+  color: var(--foreground-muted);
 }
 
 .prose a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .prose a:hover {
-  color: var(--primary-dark);
+  color: var(--accent-light);
 }
 
 .prose blockquote {
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--accent);
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: var(--gray-600);
+  color: var(--foreground-muted);
 }
 
 .prose code {
-  background: var(--gray-100);
+  background: var(--gray-200);
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
+  color: var(--foreground);
 }
 
 .prose pre {
-  background: var(--gray-800);
-  color: var(--gray-200);
+  background: var(--gray-100);
+  color: var(--foreground);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1.5rem 0;
+  border: 1px solid var(--border);
 }
 
 .prose pre code {
@@ -190,15 +275,48 @@ body {
   background-color: var(--background-alt);
 }
 
+.bg-elevated {
+  background-color: var(--background-elevated);
+}
+
 /* Text colors */
 .text-muted {
   color: var(--foreground-muted);
+}
+
+.text-subtle {
+  color: var(--foreground-subtle);
 }
 
 .text-primary {
   color: var(--primary);
 }
 
+.text-primary-light {
+  color: var(--primary-light);
+}
+
 .text-accent {
   color: var(--accent);
+}
+
+/* Borders */
+.border-default {
+  border-color: var(--border);
+}
+
+.border-light {
+  border-color: var(--border-light);
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary);
+  color: white;
 }
