@@ -8,9 +8,9 @@ export function Header() {
 
   const navigation = [
     { name: "Method", href: "/method" },
-    { name: "Book", href: "/playbook" },
+    { name: "Programs", href: "/programs" },
+    { name: "Master Playbook", href: "/playbook" },
     { name: "Blog", href: "/blog" },
-    { name: "Assessment", href: "/assessment" },
   ];
 
   return (
@@ -32,10 +32,10 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/waitlist"
+            href="/programs"
             className="bg-accent text-white px-5 py-2 rounded-lg font-semibold hover:bg-accent-light transition-all text-sm tracking-wide"
           >
-            Join Waitlist
+            Get Started
           </Link>
         </div>
 
@@ -85,11 +85,11 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/waitlist"
+              href="/programs"
               className="bg-accent text-white px-5 py-3 rounded-lg font-semibold hover:bg-accent-light transition-all text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Join Waitlist
+              Get Started
             </Link>
           </div>
         </div>

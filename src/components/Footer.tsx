@@ -15,7 +15,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Navigate */}
           <div>
             <h3 className="font-semibold mb-4 text-foreground">Navigate</h3>
             <ul className="space-y-3">
@@ -25,18 +25,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/programs" className="text-foreground-muted hover:text-accent transition-colors">
+                  Programs
+                </Link>
+              </li>
+              <li>
                 <Link href="/playbook" className="text-foreground-muted hover:text-accent transition-colors">
-                  The Book
+                  Master Playbook
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="text-foreground-muted hover:text-accent transition-colors">
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/assessment" className="text-foreground-muted hover:text-accent transition-colors">
-                  Assessment
                 </Link>
               </li>
             </ul>
@@ -46,11 +46,6 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4 text-foreground">Connect</h3>
             <ul className="space-y-3">
-              <li>
-                <Link href="/waitlist" className="text-foreground-muted hover:text-accent transition-colors">
-                  Join Waitlist
-                </Link>
-              </li>
               <li>
                 <a 
                   href="https://aifirstprinciples.org" 
